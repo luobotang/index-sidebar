@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Index Sidebar - luobotang</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+	<header>Index Sidebar</header>
+	<div id="item-container">
+		<ul></ul>
+	</div>
+
+<script src="index.js"></script>
+<script src="data.js"></script>
+<script>
+var app = app || {}
+
+app.ItemList = function (data) {
+	var list = []
+	var map = {}
+	var html
+
+	html = app.data.map(function (item) {
+		var i = item.lastIndexOf(' ')
+		var en = item.slice(0, i)
+		var cn = item.slice(i + 1)
+		var ch = en[0]
+		if (map[ch]) {
+			return '<li>' + en + '<br>' + cn + '</li>'
+		} else {
+			map[ch] = true
+			return '<li data-ch="' + ch + '">' + en + '<br>' + cn + '</li>'
+		}
+	}).join('')
+
+	var elItemList = document.querySelector('#item-container ul')
+	elItemList.innerHTML = html
+
+	return {
+		gotoChar: function (ch) {
+			if (ch === '*') {
+				elItemList.scrollTop = 0
+			} else if (ch === '#') {
+				elItemList.scrollTop = elItemList.scrollHeight
+			} else {
+				var target = elItemList.querySelector('[data-ch="' + ch + '"]')
+				if (target) {
+					target.scrollIntoView()
+				}
+			}
+		}
+	}
+}
+
+app.main = function () {
+	var itemList = app.ItemList(app.data)
+	new IndexSidebar().on('charChange', itemList.gotoChar)
+}
+
+app.main()
+</script>
+</body>
+</html>
