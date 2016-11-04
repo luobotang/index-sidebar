@@ -1,0 +1,23 @@
+{
+  "name": "index-sidebar",
+  "version": "0.1.0",
+  "description": "index sidebar",
+  "main": "index.js",
+  "scripts": {
+    "test": "start index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luobotang/index-sidebar.git"
+  },
+  "keywords": [
+    "index",
+    "sidebar"
+  ],
+  "author": "luobotang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luobotang/index-sidebar/issues"
+  },
+  "homepage": "https://github.com/luobotang/index-sidebar#readme"
+}
