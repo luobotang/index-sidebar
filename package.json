@@ -1,6 +1,6 @@
 {
   "name": "index-sidebar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "index sidebar",
   "main": "index.js",
   "scripts": {
