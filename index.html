@@ -23,7 +23,7 @@ app.ItemList = function (data) {
 	var map = {}
 	var html
 
-	html = app.data.map(function (item) {
+	html = data.map(function (item) {
 		var i = item.lastIndexOf(' ')
 		var en = item.slice(0, i)
 		var cn = item.slice(i + 1)
