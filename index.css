@@ -4,11 +4,32 @@ body {
 }
 
 header {
+	position: relative;
+	padding: 0 20px;
 	font-size: 30px;
 	line-height: 60px;
-	text-align: center;
 	color: #fff;
 	background: #2fc9da;
+}
+
+.link-github {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	padding: 5px 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	background: #fff;
+	border-radius: 15px;
+}
+.link-github svg {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.link-github:hover,
+.link-github:active {
+	background: #eee;
 }
 
 #item-container {
